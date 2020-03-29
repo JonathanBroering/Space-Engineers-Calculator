@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Space Engineers Calculator</title>
+</head>
+<body>
+<h1>Space Engineers Calculator</h1>
+<p>This Site lets you calculate how many Ores you need for a given Amount of Ingot.</p>
+<p>Type in an amount and confirm using Enter. The ore numbers are all rounded up.</p>
+
+<!-- Silver -->
+<h3>Silver</h3>
+<a>For</a>
+<input type="text" id="silver" onchange="calcuate(80, 'silver')" value="0">Ingots</input>
+<a> you need </a>
+<a id="silver_ore">0</a>
+<a> Ores.</a>
+
+<!-- Iron -->
+<h3>Iron</h3>
+<a>For</a>
+<input type="text" id="iron" onchange="calcuate(560, 'iron')" value="0">Ingots</input>
+<a> you need </a>
+<a id="iron_ore">0</a>
+<a> Ores.</a>
+
+<!-- Cobalt -->
+<h3>Cobalt</h3>
+<a>For</a>
+<input type="text" id="cobalt" onchange="calcuate(240, 'cobalt')" value="0">Ingots</input>
+<a> you need </a>
+<a id="cobalt_ore">0</a>
+<a> Ores.</a>
+
+<!-- Gold -->
+<h3>Gold</h3>
+<a>For</a>
+<input type="text" id="gold" onchange="calcuate(8, 'gold')" value="0">Ingots</input>
+<a> you need </a>
+<a id="gold_ore">0</a>
+<a> Ores.</a>
+
+<!-- Magnesium -->
+<h3>Magnesium</h3>
+<a>For</a>
+<input type="text" id="magnesium" onchange="calcuate(5.6, 'magnesium')" value="0">Ingots</input>
+<a> you need </a>
+<a id="magnesium_ore">0</a>
+<a> Ores.</a>
+
+<!-- nickel -->
+<h3>Nickel</h3>
+<a>For</a>
+<input type="text" id="nickel" onchange="calcuate(320, 'nickel')" value="0">Ingots</input>
+<a> you need </a>
+<a id="nickel_ore">0</a>
+<a> Ores.</a>
+
+<!-- platinum -->
+<h3>Platinum</h3>
+<a>For</a>
+<input type="text" id="platinum" onchange="calcuate(4, 'platinum')" value="0">Ingots</input>
+<a> you need </a>
+<a id="platinum_ore">0</a>
+<a> Ores.</a>
+
+<!-- silicon -->
+<h3>Silicon</h3>
+<a>For</a>
+<input type="text" id="silicon" onchange="calcuate(560, 'silicon')" value="0">Ingots</input>
+<a> you need </a>
+<a id="silicon_ore">0</a>
+<a> Ores.</a>
+
+<!-- uranium -->
+<h3>Uranium</h3>
+<a>For</a>
+<input type="text" id="uranium" onchange="calcuate(5.6, 'uranium')" value="0">Ingots</input>
+<a> you need </a>
+<a id="uranium_ore">0</a>
+<a> Ores.</a>
+
+<script>
+    function calcuate(rate, ore)  {
+        console.log("Input: " + rate, ore);
+        amount = document.getElementById(ore).value;
+        console.log(amount);
+        returnvalue = ( amount / rate ) * 1000;
+        console.log(returnvalue);
+        document.getElementById(ore + "_ore").innerText = formatNumber(roundUp(returnvalue, 0));
+    }
+    function roundUp(num, precision) {
+        precision = Math.pow(10, precision)
+        return Math.ceil(num * precision) / precision
+    }
+    function formatNumber(num) {
+        return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')
+    }
+
+</script>
+</body>
+</html>
