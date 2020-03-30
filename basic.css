@@ -1,0 +1,60 @@
+/* This is the basic Style Sheet for Jonathan-Broering.de*/
+/*         This file was created internally              */
+
+@font-face {
+    font-family: 'NotoSansTC-Regular';
+    src: url('NotoSansTC-Regular.otf');
+}
+html {
+    font-family: 'NotoSansTC-Regular';
+}
+
+/* mobile scaling */
+@media only screen and (max-device-width: 480px) {
+    body {
+        font-size: 100%;
+        margin: 1% 1%;
+    }
+}
+
+/* margin */
+body {
+    margin: 2% 15%;
+}
+
+/* better hr */
+hr{
+    border:0;
+    border-bottom:1px solid #000;
+    margin: 10px 0;
+}
+
+/* better links */
+.link{
+    color:#0192d1;
+    text-decoration:none;
+}
+
+/* better p */
+p{
+    margin: 5px 0;
+}
+/* Text einruekung */
+.text{
+    margin-left: 1%;
+}
+.right{
+    float: right;
+}
+
+/* blockqoute (manely from Milligram) not sure if this will stay here*/
+blockquote {
+    border-left: 0.3rem solid #d1d1d1;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 1rem 1.5rem;
+}
+
+blockquote *:last-child {
+    margin-bottom: 0;
+}
